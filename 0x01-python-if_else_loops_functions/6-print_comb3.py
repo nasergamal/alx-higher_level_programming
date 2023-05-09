@@ -5,6 +5,6 @@ for i in range(10):
         if n < i or n == i:
             continue
         if (i == 8 and n == 9):
-            print(f'{i}{n}')
+            print('{}{}'.format(i, n))
             break
-        print(f'{i}{n}', end=", ")
+        print('{}{}'.format(i, n))
