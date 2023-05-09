@@ -7,4 +7,4 @@ for i in range(10):
         if (i == 8 and n == 9):
             print('{}{}'.format(i, n))
             break
-        print('{}{}'.format(i, n))
+        print('{}{}'.format(i, n), end=", ")
