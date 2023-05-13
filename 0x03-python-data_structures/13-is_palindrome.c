@@ -10,29 +10,25 @@
  */
 int is_palindrome(listint_t **head)
 {
-	char lis[1024], f = 1;
-	int i = 0, n;
-	listint_t *ptr = NULL;
+	int i = 0, e = 0, f = 0;
+	listint_t *ptr = NULL, *s = *head;
 
 	ptr = *head;
-	while (ptr != NULL)
+	while (ptr->next != NULL)
 	{
-		lis[i] = ptr->n;
 		ptr = ptr->next;
-		i++;
+		i += 2;
 	}
-	lis[i] = '\0';
-	if (!i)
-		return (0);
-	for (i -= 1, n = 0; i != n - 1 && i >= 0; i--, n++)
+	for (;  i > e ; i -= 2, e += 2)
 	{
-		if (lis[i] != lis[n])
+		f = 1;
+		if (s[i].n != s[e].n)
 		{
 			f = 0;
 			break;
 		}
 	}
-	if (f && ((i == -1 && !lis[n]) || i == n - 1))
+	if (f && e > i)
 		return (1);
 	return (0);
 }
