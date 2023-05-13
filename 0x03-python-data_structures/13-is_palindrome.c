@@ -10,7 +10,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i = 0, e = 0, f = 0;
+	int i = 0, e = 0;
 	listint_t *ptr = NULL, *s = *head;
 
 	ptr = *head;
@@ -21,14 +21,10 @@ int is_palindrome(listint_t **head)
 	}
 	for (;  i > e ; i -= 2, e += 2)
 	{
-		f = 1;
 		if (s[i].n != s[e].n)
 		{
-			f = 0;
-			break;
+			return (0);
 		}
 	}
-	if (f && e > i)
-		return (1);
-	return (0);
+	return (1);
 }
