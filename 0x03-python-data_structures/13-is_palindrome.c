@@ -11,10 +11,12 @@
 int is_palindrome(listint_t **head)
 {
 	int i = 0, e = 0;
-	listint_t *ptr = NULL, *s = *head;
+	listint_t *ptr = NULL, *s = NULL;
 
-	ptr = *head;
-	while (ptr->next != NULL)
+	if (head == NULL)
+	      return (0);
+	ptr = s = *head;
+	while (ptr != NULL &&  ptr->next != NULL)
 	{
 		ptr = ptr->next;
 		i += 2;
