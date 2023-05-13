@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 	}
 	if (i % 2 != 0)
 		return (0);
-	for (i -= 1, n = 0; i != n - 1; i--, n++)
+	for (i -= 1, n = 0; i != n - 1 && i > 0; i--, n++)
 	{
 		f = 1;
 		if (lis[i] != lis[n])
