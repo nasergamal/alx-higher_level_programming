@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <Python.h>
-
+void print_python_float(PyObject *p);
 void print_python_bytes(PyObject *p);
 
 /**
@@ -15,7 +15,7 @@ void print_python_list(PyObject *p)
 	PyObject *ob;
 
 	printf("[*] Python list info\n");
-	printf("[*] Size of the Python List = %d\n", (int)PyList_Get_Size(p));
+	printf("[*] Size of the Python List = %d\n", (int)PyList_GET_SIZE(p));
 	printf("[*] Allocated = %d\n", (int)((PyListObject *)p)->allocated);
 	for (i = 0; i < (int)PyList_Size(p); i++)
 	{
@@ -42,7 +42,7 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	s = ((PyBytesObject *)p->ob_sval);
+	s = ((PyBytesObject *)p)->ob_sval;
 	si = PyBytes_Size(p);
 	printf("  size: %d\n", si);
 	printf("  trying string: %s\n", s);
