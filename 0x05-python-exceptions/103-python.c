@@ -73,7 +73,7 @@ void print_python_float(PyObject *p)
 
 	if (strcmp(p->ob_type->tp_name, "float"))
 	{
-		printf("[ERROR] Invalid Float Object\n");
+		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
 	printf("  value: %s\n",
