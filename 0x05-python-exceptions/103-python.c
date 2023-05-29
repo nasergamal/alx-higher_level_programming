@@ -14,6 +14,7 @@ void print_python_list(PyObject *p)
 	int i;
 	PyObject *ob;
 
+	fflush(stdout);	
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %d\n", (int)PyList_GET_SIZE(p));
 	printf("[*] Allocated = %d\n", (int)((PyListObject *)p)->allocated);
@@ -36,6 +37,7 @@ void print_python_bytes(PyObject *p)
 	int si, i;
 	char *s;
 
+	fflush(stdout);
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes"))
 	{
@@ -66,6 +68,7 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_float(PyObject *p)
 {
+	fflush(stdout);
 	printf("[.] float object info\n");
 
 	if (strcmp(p->ob_type->tp_name, "float"))
