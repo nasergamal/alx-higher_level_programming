@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 '''circle'''
+import math
 
 
 class MagicClass:
@@ -13,8 +14,8 @@ class MagicClass:
 
     def area(self):
         '''return area'''
-        return ((self.__radius ** 2) * pi)
+        return ((self.__radius ** 2) * math.pi)
 
     def circumference(self):
         '''return circumference'''
-        return (2 * pi * self.__radius)
+        return (2 * math.pi * self.__radius)

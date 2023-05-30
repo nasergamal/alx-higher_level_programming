@@ -47,7 +47,7 @@ class Square:
         '''return square area'''
         return self.__size ** 2
 
-    def __str__(self):
+    def sqr(self):
         '''make a printable copy of square'''
         if self.__size == 0:
             return "\n"
@@ -59,22 +59,15 @@ class Square:
                 sqr += " "
             for n in range(self.__size):
                 sqr += "#"
-            if i == self.__size - 1:
-                break
             sqr += "\n"
         return sqr
+
+    def __str__(self):
+        return self.sqr()[:-1]
 
     def my_print(self):
         '''
         print a square based on the size using # as filler
         and preceded by space based on position value
         '''
-        if self.__size == 0:
-            print("")
-            return
-
-        [print("") for m in range(self.__position[1])]
-        for i in range(self.__size):
-            [print(" ", end="") for b in range(self.__position[0])]
-            [print("#", end="") for n in range(self.__size)]
-            print("")
+        print(sqr(), end="")
