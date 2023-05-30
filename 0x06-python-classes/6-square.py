@@ -39,9 +39,7 @@ class Square:
                 not isinstance(value[1], int)
                 or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
-        print(self.__position)
         self.__position = value
-        print(self.__position)
 
     def check(size):
         '''check for invalid type/value in size'''
