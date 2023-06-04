@@ -1,0 +1,24 @@
+numpy matrix multiplication
+===========================
+
+
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+
+	>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	array([[ 7, 10],
+	       [15, 22]])
+	
+	>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+	array([[13, 16]])
+
+	>>> lazy_matrix_mul([[3, 4], [5, 6]])
+	Traceback (most recent call last):
+	   ...
+	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+	>>> lazy_matrix_mul(None)
+	Traceback (most recent call last):
+ 	   ...
+	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+

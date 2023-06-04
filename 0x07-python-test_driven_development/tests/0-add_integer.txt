@@ -1,0 +1,39 @@
+add_integer_test
+================
+
+
+	
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+	normal addition tests	
+	>>> print(add_integer(10, 50))
+	60
+
+	>>> print(add_integer(0, 0))
+	0
+
+	>>> print(add_integer(-1, 1))
+	0
+
+	>>> print(add_integer(2.5, 2.5))
+        4
+
+	>>> print(add_integer(-99, -99))
+	-198
+	>>> print(add_integer(1.0, 1.0))
+	2
+
+	>>> print(add_integer(999999999999, 1000000000001))
+        2000000000000
+
+	Exception tests
+	>>> print(add_integer(1.0, 'one maybe'))
+	Traceback (most recent call last):
+	   ...
+	TypeError: b must be an integer
+	
+	>>> print(add_integer('ok maybe two', 4))
+        Traceback (most recent call last):
+           ...
+        TypeError: a must be an integer
+

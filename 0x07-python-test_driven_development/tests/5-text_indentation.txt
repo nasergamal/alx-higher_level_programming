@@ -1,0 +1,44 @@
+test text_indentation
+=====================
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+          ...
+        TypeError: text must be a string
+
+	>>> text = """"""
+
+	text = 343
+	>>> text_indentation(text)
+	Traceback (most recent call last):
+	  ...
+	TypeError: text must be a string
+
+	>>> text = """Lore of the story is: under consideration"""
+	>>> text_indentation(text)
+	Lore of the story is:
+	<BLANKLINE>	
+        under consideration
+
+	>>> text = """nobody cares! \n but who cares."""
+	>>> text_indentation(text)
+	nobody cares! 
+	but who cares.
+	<BLANKLINE>
+
+	>>> text = "\n\n\n"
+	>>> text_indentation(text)
+	<BLANKLINE>
+	<BLANKLINE>
+	<BLANKLINE>
+
+	>>> text = """..."""
+	>>> text_indentation(text)
+	.
+	<BLANKLINE>
+	.
+        <BLANKLINE>
+        .
+        <BLANKLINE>
