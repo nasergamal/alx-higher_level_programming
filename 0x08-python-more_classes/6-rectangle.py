@@ -3,19 +3,20 @@
 
 
 class Rectangle:
-    '''Rectangle class
-
-    Args:
-        width (int): rectangle width
-        height (int): rectangle height
-
-    Raise:
-        TypeError: if width or height is not int
-        ValueError: if width or height is less than 0
-    '''
+    '''Rectangle class'''
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
+        '''rectangle initialization
+
+        Args:
+            width (int): rectangle width
+            height (int): rectangle height
+
+        Raise:
+            TypeError: if width or height is not int
+            ValueError: if width or height is less than 0
+        '''
         type(self).number_of_instances += 1
         self.width = width
         self.height = height
@@ -39,7 +40,7 @@ class Rectangle:
         '''Return height'''
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         '''Set height'''
         if not isinstance(value, int):
