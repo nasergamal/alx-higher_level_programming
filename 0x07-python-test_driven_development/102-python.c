@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include "Python.h"
 
+
+/**
+ * print_python_string - print pyobject string
+ * @p: pyobject
+ *
+ * Return: void
+ */
 void print_python_string(PyObject *p)
 {
 	printf("[.] string object info\n");
