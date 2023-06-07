@@ -14,8 +14,13 @@ test say_my_name function
            ...
         TypeError: first_name must be a string
 
+	>>> say_my_name()
+        Traceback (most recent call last):
+           ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+	
 	>>> say_my_name("John", "Cina")
 	My name is John Cina
 
-	>>> say_my_name("Bond")
-        My name is Bond 
+	>>> say_my_name('Bond')
+	My name is Bond 
