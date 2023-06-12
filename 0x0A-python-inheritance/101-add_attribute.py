@@ -4,6 +4,6 @@
 
 def add_attribute(a, b, c):
     '''add_attribute function'''
-    if type(a).__module__ == 'builtins':
+    if not hasattr(a, "__dict__"):
         raise TypeError("can't add new attribute")
     setattr(a, b, c)
