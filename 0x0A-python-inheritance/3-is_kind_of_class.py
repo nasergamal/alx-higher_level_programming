@@ -4,4 +4,4 @@
 
 def is_kind_of_class(obj, a_class):
     '''check if the 2 arguments are related'''
-    return (type(obj).__name__ == a_class.__name__)
+    return isinstance(obj, a_class)

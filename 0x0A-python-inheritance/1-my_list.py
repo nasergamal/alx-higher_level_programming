@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-'''inheriting lists'''
+"""
+inheriting lists for MyList class
+"""
 
 
 class MyList(list):
-    '''My List class'''
+    """defining My List class"""
     def __init__(self):
-        pass
+        """initialization of mylist instance"""
+        super().__init__()
 
     def print_sorted(self):
+        """prints the sorted list"""
         print(sorted(self))
