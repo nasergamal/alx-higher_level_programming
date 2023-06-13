@@ -19,7 +19,7 @@ class Student:
 
     def to_json(self, attrs=None):
         '''return all instance for student as dictionary'''
-        if (not attrs or not type(attrs) == list
+        if (not type(attrs) == list
            or not all(type(t) == str for t in attrs)):
             return self.__dict__
         return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
