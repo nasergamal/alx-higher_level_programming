@@ -17,9 +17,9 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=''):
+    def to_json(self, attrs=None):
         '''return all instance for student as dictionary'''
-        if (not attrs or not type(attrs) == list or
-           not any(hasattr(self, attr) for attr in attrs)):
+        if (not attrs or not type(attrs) == list
+           or not all(type(t) == str for t in attrs)):
             return self.__dict__
-        return {key: self.__dict__[key] for key in attrs if hasattr(self, key)}
+        return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
