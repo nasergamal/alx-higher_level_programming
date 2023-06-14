@@ -17,22 +17,23 @@ printable_stuff = {}
 try:
     for line in stdin:
         li = line.split()
+        if c == 10:
+            printcycle(size, printable_stuff)
+            c = 1
+        else:
+            c += 1
 
         try:
             size += int(li[-1])
         except Exception as e:
             pass
-        if li[-2] in possible_code:
-            if printable_stuff.get(li[-2], 0) == 0:
-                printable_stuff[li[-2]] = 0
-            printable_stuff[li[-2]] += 1
-
-        if c == 9:
-            c += 1
-            printcycle(size, printable_stuff)
-            c = 1
-        else:
-            c += 1
+        try:
+            if li[-2] in possible_code:
+                if printable_stuff.get(li[-2], 0) == 0:
+                    printable_stuff[li[-2]] = 0
+                printable_stuff[li[-2]] += 1
+        except IndexError:
+            pass
     printcycle(size, printable_stuff)
 except KeyboardInterrupt:
     printcycle(size, printable_stuff)
