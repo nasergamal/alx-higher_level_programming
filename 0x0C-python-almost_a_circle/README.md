@@ -1,6 +1,6 @@
-<h1>0x0C. Python - Almost a circle</h1>
+# 0x0C. Python - Almost a circle
 
-<h2>a review on previous python projects including:</h2>
+## A review on previous python projects including:
 * Import
 * Exceptions
 * Class
@@ -12,7 +12,7 @@
 * Unittest
 * Read/Write file
 
-<h2>and introduction to:</h2>
+# An introduction to:
 * args and kwargs
 * Serialization/Deserialization
 * JSON
