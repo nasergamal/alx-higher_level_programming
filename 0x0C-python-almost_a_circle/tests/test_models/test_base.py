@@ -15,6 +15,12 @@ class test_Base (unittest.TestCase):
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
+    def test_no_argument(self):
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 2)
+
     def test_None_argument(self):
         b1 = Base(None)
         b2 = Base(None)
@@ -34,6 +40,15 @@ class test_Base (unittest.TestCase):
         self.assertEqual(b1.id, 40)
         self.assertEqual(b3.id, -50)
         self.assertEqual(b2.id, b4.id - 1)
+
+    def test_base_float_id(self):
+        self.assertEqual(1.5, Base(1.5).id)
+
+    def test_base_string_id(self):
+        self.assertEqual('id', Base('id').id)
+
+    def test_base_two_args(self):
+        self.assertRaises(TypeError, Base, 1, 2)
 
 
 class Test_Base_JSON(unittest.TestCase):
@@ -169,11 +184,16 @@ class Test_Base_save_to_file_json(unittest.TestCase):
 
 class Test_Base_from_json_string(unittest.TestCase):
     '''from json functtion unit tests'''
-    def test_from_json_string_emptylist_rectangle(self):
+    def test_from_json_string_emptylisttype_rectangle(self):
         list_input = []
         json_list_input = Rectangle.to_json_string(list_input)
         from_json = Rectangle.from_json_string(json_list_input)
         self.assertIsInstance(from_json, list)
+
+    def test_from_json_string_emptylistcontent_rectangle(self):
+        list_input = []
+        json_list_input = Rectangle.to_json_string(list_input)
+        from_json = Rectangle.from_json_string(json_list_input)
         self.assertEqual(from_json, [])
 
     def test_from_json_string_None_1rectangle(self):

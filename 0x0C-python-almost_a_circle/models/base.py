@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 '''Base class for shapes calculation'''
 import json
 import csv

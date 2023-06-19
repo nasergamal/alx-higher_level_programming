@@ -68,10 +68,18 @@ class test_Rectangle(unittest.TestCase):
     def test_type_errormsg_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle('a', 4)
+            Rectangle(3.5, 4)
+            Rectangle([4, 5], 4)
+            Rectangle({'asd': 5}, 4)
+            Rectangle((2, 4), 4)
 
     def test_type_errormsg_height(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(4, 'a')
+            Rectangle(4, 5,)
+            Rectangle(4, [4, 5])
+            Rectangle(4, {'asd': 5})
+            Rectangle(2, (4, 4))
 
     def test_type_xy(self):
         with self.assertRaises(TypeError):
@@ -391,6 +399,7 @@ class Test_Rectangle_update_kwargs(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r1.update(width=0)
 
+
 class TestRectangle_to_dictionary(unittest.TestCase):
     '''to dictionary function unit tests'''
     def test_rectangle_dict(self):
@@ -403,3 +412,8 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r2 = Rectangle(4, 5, 1, 2, 3)
         r2.update(r1.to_dictionary())
         self.assertNotEqual(r1, r2)
+
+    def test_rectangle_dict_witharg(self):
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        with self.assertRaises(TypeError):
+            r1.to_dictionary(1)

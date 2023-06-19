@@ -23,6 +23,21 @@ class test_Square(unittest.TestCase):
         self.assertEqual(0, s2.x)
         self.assertEqual(0, s2.y)
 
+    def test_square_size_setter(self):
+        s1 = Square(1)
+        s1.size = 5
+        self.assertEqual(5, s1.size)
+
+    def test_square_x_setter(self):
+        s1 = Square(1)
+        s1.x = 5
+        self.assertEqual(5, s1.x)
+
+    def test_square_y_setter(self):
+        s1 = Square(1)
+        s1.y = 5
+        self.assertEqual(5, s1.y)
+
     def test_3to4_arg(self):
         s1 = Square(1, 3)
         s2 = Square(3, 5, 6)
@@ -333,6 +348,7 @@ class Test_Square_update_kwargs(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s1.update(size=0)
 
+
 class TestSquare_to_dictionary(unittest.TestCase):
     '''to dictionary function unittests'''
     def test_square_dict(self):
@@ -345,3 +361,8 @@ class TestSquare_to_dictionary(unittest.TestCase):
         s2 = Square(4, 1, 2, 3)
         s2.update(s1.to_dictionary())
         self.assertNotEqual(s1, s2)
+
+    def test_square_dict_witharg(self):
+        s1 = Square(1, 2, 3, 4)
+        with self.assertRaises(TypeError):
+            s1.to_dictionary(1)
