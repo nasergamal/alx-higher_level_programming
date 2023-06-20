@@ -106,14 +106,17 @@ class test_Rectangle(unittest.TestCase):
             Rectangle(0, 4, 5, 6)
             Rectangle(-5, 4, 5, 6)
 
-    def test_value_height(self):
+    def test_value_height_zero(self):
         with self.assertRaises(ValueError):
-            Rectangle(2, 0, 5, 6)
+            Rectangle(1, 0)
+
+    def test_value_height_negative(self):
+        with self.assertRaises(ValueError):
             Rectangle(3, -6, 5, 6)
 
     def test_value_errormsg_height(self):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            Rectangle(2, 0, 5, 6)
+            Rectangle(1, 0)
             Rectangle(3, -6, 5, 6)
 
     def test_value_x(self):

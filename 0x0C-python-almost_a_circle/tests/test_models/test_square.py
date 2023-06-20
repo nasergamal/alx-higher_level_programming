@@ -23,6 +23,14 @@ class test_Square(unittest.TestCase):
         self.assertEqual(0, s2.x)
         self.assertEqual(0, s2.y)
 
+    def test_square_size_negative(self):
+        with self.assertRaises(ValueError):
+            s1 = Square(-1)
+
+    def test_square_size_zero(self):
+        with self.assertRaises(ValueError):
+            s1 = Square(0)
+
     def test_square_size_setter(self):
         s1 = Square(1)
         s1.size = 5
