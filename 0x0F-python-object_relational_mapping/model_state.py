@@ -3,14 +3,8 @@
     defining states class for mapping in database
 '''
 from sqlalchemy import Column, Integer, String
-# from sqlalchemy.ext.declarative import declarative_base
-# Base = declarative_base()
-from sqlalchemy.orm import DeclarativeBase
-
-
-class Base(DeclarativeBase):
-    '''ORM Base'''
-    pass
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
 
 
 class State(Base):

@@ -10,8 +10,8 @@ from sys import argv as a
 if __name__ == '__main__':
     db = MySQLdb.connect(user=a[1], password=a[2], database=a[3], port=3306)
     c = db.cursor()
-    c.execute("""SELECT * FROM states WHERE name = %s
-            ORDER BY states.id;""", (a[4],))
+    c.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
+            ORDER BY states.id;""".format(a[4]))
     results = c.fetchall()
     for n in results:
         print(n)
