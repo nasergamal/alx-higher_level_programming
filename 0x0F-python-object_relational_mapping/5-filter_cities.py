@@ -17,7 +17,6 @@ if __name__ == '__main__':
                  WHERE states.name LIKE BINARY %(name)s
                  ORDER BY cities.id;""", {'name': a[4]})
     results = c.fetchall()
-    if results:
-        print(', '.join([ele[0] for ele in results]))
+    print(', '.join([ele[0] for ele in results]))
     c.close()
     db.close()
