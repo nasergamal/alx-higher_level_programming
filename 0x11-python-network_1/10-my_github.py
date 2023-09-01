@@ -4,8 +4,6 @@ if __name__ == "__main__":
     import sys
     import requests
 
-    r = requests.get('https://api.github.com/user', auth=(sys.argv[1], sys.argv[2]))
-    try:
-        print(r.json()['id'])
-    except KeyError:
-        print("None")
+    basic = requests.auth.HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    r = requests.get('https://api.github.com/user', auth=basic)
+    print(r.json().get('id'))

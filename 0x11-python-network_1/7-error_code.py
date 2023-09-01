@@ -5,7 +5,7 @@ if __name__ == "__main__":
     import requests
 
     r = requests.get(sys.argv[1])
-    if r.status_code == requests.codes.ok:
+    if r.status_code < 400:
         print(r.text)
     else:
-        print(r.status_code)
+        print(f'Error code: {r.status_code}')
