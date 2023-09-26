@@ -6,7 +6,7 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     const data = JSON.parse(body).characters;
-    data.forEach((c) => {
+    for (const c of data) {
       request(c, function (error, response2, body2) {
         if (error) {
           console.log(error);
@@ -14,6 +14,6 @@ request(url, function (error, response, body) {
           console.log(JSON.parse(body2).name);
         }
       });
-    });
+    }
   }
 });
